@@ -1,2 +1,2 @@
-# Preprocessing_pipeline
-Intracranial EEG pre-processing steps in SPM12 and Matlab
+# Preprocessing-pipeline
+Preprocessing pipeline using SPM tools and some scripts (started)
