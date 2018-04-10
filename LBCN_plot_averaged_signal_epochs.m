@@ -144,7 +144,6 @@ for i=1:length(indchan)
         hold on
     end
     
-    
     %add lines
     %zero level
     line([time_start time_end],[0 0],'LineWidth',1,'Color','k');
@@ -159,12 +158,13 @@ for i=1:length(indchan)
     ylim([min(plot_min)-min(plot_min)*-.10 max(plot_max)+max(plot_max)*.10]);
     xlabel('Time (s)','fontsize',14);
     ylabel('Signal','fontsize',14);
-    if ismember(indchan(i),D.badchannels)
-        isgood = 'bad';
-    else
-        isgood = 'good';
-    end
-    title(['Channel ',char(chanlabels(D,indchan(i))),'  (',isgood,')'],'fontsize',14, 'fontweight','bold')
+%     if ismember(indchan(i),D.badchannels)
+%         isgood = 'bad';
+%     else
+%         isgood = 'good';
+%     end
+    title(['Channel ',char(chanlabels(D,indchan(i)))],'fontsize',14, 'fontweight','bold','Interpreter','none')
+    legend(labels,'Location','NorthEastOutside');
     
     % Save figures in a 'figs' subdirectory
     path = spm_fileparts(fname);

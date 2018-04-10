@@ -171,7 +171,7 @@ else
 end
 evtot = events(D);
 if ~isempty(evtot)
-    type_evtot = cellstr(char(evtot(:).type));
+    type_evtot = cellstr(char(evtot{:}.type));
     nevm = size(evman,1);
     
     for evm = 1 : nevm

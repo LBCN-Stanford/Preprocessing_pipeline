@@ -40,6 +40,10 @@ end
 
 if nargin<5 || isempty(timewin)
     timewin = 1:nsamples(D);
+else
+    t1 = indsample(D,timewin(1));
+    t2 = indsample(D,timewin(2));
+    timewin = t1:t2;
 end
 
 % Compute and plot power spectrum

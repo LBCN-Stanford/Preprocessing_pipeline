@@ -174,7 +174,7 @@ else       % It's the begining
         else    
             evs    = events(D);
             if ~isempty(evs)
-                valev  = {evs(:).value};
+                valev  = {evs{:}.value};
                 type = cell(0);
                 evm = 1;
                 if isfield(D.CRC,'score')
@@ -439,10 +439,10 @@ set(handles.EMGpopmenu,...
 popmenustring   =   chanlabels(handles.Dmeg{1}, handles.inddis);
 set(handles.fftchan, 'String', popmenustring,'Value', 1,'Visible','off')
 
-load('CRC_electrodes.mat');
-handles.names       =   names;
-handles.crc_types   =   crc_types;
-handles.pos         =   pos';
+allels = load('CRC_electrodes.mat');
+handles.names       =   allels.names;
+handles.crc_types   =   allels.crc_types;
+handles.pos         =   allels.pos';
 
 %events display, only if one file
 if ~handles.multcomp
